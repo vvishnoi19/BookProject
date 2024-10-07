@@ -1,0 +1,55 @@
+<%- include('./base/header.ejs') %>
+<div class="container">
+    <div class="alert bg-danger my-2">
+        <h4 class="text-center text-light" sty>Add Your Book</h4>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col my-2" style="border:2px solid grey;border-radius:10px">
+            <form action="/edit/book/<%=book._id %>" method="post" enctype="multipart/form-data">
+                <div>
+                    <label class="form-label">Book Title</label>
+                    <input type="text" name="bookTitle" value="<%= book.bookTitle %>" class="form-control ">
+                </div>
+                <div>
+                    <label class="form-label">Author Name</label>
+                    <input type="text" name="authorName" value="<%= book.authorName %>" class="form-control" >
+                </div>
+                <div>
+                    <label class="form-label">Publication House</label>
+                    <input type="text" name="publicationHouse" value="<%= book.publicationHouse %>" class="form-control" >
+                </div>
+                <div>
+                    <label class="form-label">ISBN No</label>
+                    <input type="text" name="isbnNo" value="<%= book.isbnNo %>" class="form-control">
+                </div>
+                
+                <div>
+                    <label class="form-label">Price</label>
+                    <input type="text" name="price" value="<%= book.price %>" class="form-control" >
+                </div>
+                <div>
+                    <label class="form-label">Language</label>
+                    <select name="language" class="form-control">
+                        <option value="Hindi" <%= book.language==='Hindi' ?  'selected': '' %>>Hindi</option>
+                        <option value="English" <%= book.language==='English' ?  'selected': '' %>>English</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label">Select Book Image</label>
+                    <!-- <input type="file" name="bookImage" value="<%= book.bookImage %>" class="form-control" > -->
+                    <input type="file" name="bookImage" class="form-control" >
+                    <img src="<%= book.bookImage %>" class="my-2" width="100" height="100">
+                     
+                </div>
+                <input type="submit" value="Update Book" class="btn btn-primary w-100 my-2" style="font-size: 19px;font-weight:600">
+              
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+<%- include('./base/footer.ejs') %>

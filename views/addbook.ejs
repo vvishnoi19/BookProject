@@ -1,0 +1,52 @@
+<%- include('./base/header.ejs') %>
+<div class="container">
+    <div class="alert bg-danger my-2">
+        <h4 class="text-center text-light" sty>Add Your Book</h4>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col my-2" style="border:2px solid grey;border-radius:10px">
+            <form action="/add/book" method="post" enctype="multipart/form-data">
+                <div>
+                    <label class="form-label">Book Title</label>
+                    <input type="text" name="bookTitle" class="form-control ">
+                </div>
+                <div>
+                    <label class="form-label">Author Name</label>
+                    <input type="text" name="authorName" class="form-control">
+                </div>
+                <div>
+                    <label class="form-label">Publication House</label>
+                    <input type="text" name="publicationHouse" class="form-control">
+                </div>
+                <div>
+                    <label class="form-label">ISBN No</label>
+                    <input type="text" name="isbnNo" class="form-control">
+                </div>
+                
+                <div>
+                    <label class="form-label">Price</label>
+                    <input type="text" name="price" class="form-control">
+                </div>
+                <div>
+                    <label class="form-label">Language</label>
+                    <select name="language" class="form-control">
+                        <option value="Hindi">Hindi</option>
+                        <option value="English">English</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label">Select Book Image</label>
+                    <input type="file" name="bookImage" class="form-control">
+                </div>
+                <input type="submit" value="Register" class="btn btn-primary w-100 my-2" style="font-size: 19px;font-weight:600">
+              
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+<%- include('./base/footer.ejs') %>
